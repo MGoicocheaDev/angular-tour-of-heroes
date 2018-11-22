@@ -1,4 +1,4 @@
-import { NgModule }       from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
@@ -21,9 +21,9 @@ import { MessagesComponent }    from './messages/messages.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
+    AppRoutingModule ,
     HttpClientModule,
-
+    
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -39,6 +39,7 @@ import { MessagesComponent }    from './messages/messages.component';
     MessagesComponent,
     HeroSearchComponent
   ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [ HeroService, MessageService ],
   bootstrap: [ AppComponent ]
 })
